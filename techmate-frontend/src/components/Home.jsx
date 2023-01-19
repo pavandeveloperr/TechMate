@@ -19,16 +19,16 @@ const Home = () => {
           alignItems="center"
           spacing={['16', '56']}
         >
-          <VStack width={'full'} alignItems={['center', 'flex-end']}>
-            <Heading children="LEARN FROM THE EXPERTS" size={'2xl'} />
-            <Text children="Find Valuable Content At Reasonable Price" />
+          <VStack width={'full'} alignItems={['center', 'flex-end']} spacing='8'>
+            <Heading children="LEARN FROM THE EXPERTS" size={['md','xl']} />
+            <Text fontSize={['md','2xl']} fontFamily='cursive' textAlign={["center","left"]} children="Find Valuable Content At Reasonable Price" />
             <Link to="/courses">
               <Button size={'lg'} colorScheme="yellow">
                 Explore Now
               </Button>
             </Link>
           </VStack>
-          <Image className='vector-graphics' boxSize={'md'} src={vg} objectFit="contain" />
+          <Image className='vector-graphics' boxSize={'xs'} src={vg} objectFit="contain" />
         </Stack>
       </div>
 
