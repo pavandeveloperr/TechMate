@@ -9,11 +9,9 @@ import {
   Text,
   HStack,
   Button,
-  GridItem,
   Stack,
   VStack,
   Image,
-  AlertDescription,
   Link,
 } from '@chakra-ui/react';
 

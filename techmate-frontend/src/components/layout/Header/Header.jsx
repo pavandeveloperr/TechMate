@@ -27,7 +27,7 @@ const Header = () => {
 
   
     // authentication variables
-    const isAuthenticated = true;
+    const isAuthenticated = false;
     const user = {
         role: 'admin',
     };
