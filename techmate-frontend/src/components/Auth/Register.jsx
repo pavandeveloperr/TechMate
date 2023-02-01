@@ -1,40 +1,52 @@
 import {
-    Avatar,
-    Box,
-    Button,
-    Container,
-    FormLabel,
-    Heading,
-    Input,
-    VStack,
-  } from '@chakra-ui/react';
-  import React, { useState } from 'react';
-  import { Link } from 'react-router-dom';
-  
+  Avatar,
+  Box,
+  Button,
+  Container,
+  FormLabel,
+  Heading,
+  Input,
+  VStack,
+} from '@chakra-ui/react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-  //fileupload styles
-  export const fileUploadCss = {
-    cursor: "pointer", marginLeft:"-5%",
-        width: "110%",
-        border: "none",
-        height: "100%",
-        color: "#ECC948",
-        backgroundColor: "white"
-  }
 
-  const fileUploadStyle = {
-    "&::file-selector-button": fileUploadCss
-  }
+//fileupload styles
+export const fileUploadCss = {
+  cursor: "pointer", marginLeft: "-5%",
+  width: "110%",
+  border: "none",
+  height: "100%",
+  color: "#ECC948",
+  backgroundColor: "white"
+}
+
+const fileUploadStyle = {
+  "&::file-selector-button": fileUploadCss
+}
 
 const Register = () => {
-    const [email, setEmail] = useState('');
-    const [name, setName] = useState('');
-    const [password, setPassword] = useState('');
-    const [imagePrev, setImagePrev] = useState('')
-  
-    const submitHandler = e => {
-      e.preventDefault();
-    };
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
+  const [imagePrev, setImagePrev] = useState('')
+  const [image, setImage] = useState('')
+
+  const submitHandler = e => {
+    e.preventDefault();
+  };
+
+  const changeImageHandler = (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onloadend = () => {
+      setImagePrev(reader.result);
+      setImage(file);
+    }
+  }
 
   return (
     <Container h={'95vh'}>
@@ -42,9 +54,9 @@ const Register = () => {
         <Heading textTransform={"uppercase"} children={'Registration'} />
 
         <form onSubmit={submitHandler} style={{ width: '100%' }}>
-            <Box my={4} display={"flex"} justifyContent={"center"}>
-                <Avatar src={imagePrev} size={"2xl"} />
-            </Box>
+          <Box my={4} display={"flex"} justifyContent={"center"}>
+            <Avatar src={imagePrev} size={"2xl"} />
+          </Box>
           <Box my={'4'}>
             <FormLabel htmlFor="Name" children="Name" />
             <Input
@@ -93,6 +105,7 @@ const Register = () => {
               type={'file'}
               focusBorderColor="yellow.500"
               css={fileUploadStyle}
+              onChange={changeImageHandler}
             />
           </Box>
 
@@ -119,8 +132,8 @@ const Register = () => {
           </Box>
         </form>
       </VStack>
-      </Container>
-    )
+    </Container>
+  )
 }
 
 export default Register
