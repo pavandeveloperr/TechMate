@@ -18,8 +18,8 @@ export const fileUploadCss = {
   width: "110%",
   border: "none",
   height: "100%",
-  color: "#ECC948",
-  backgroundColor: "white"
+  color: "black",
+  backgroundColor: "lightgray"
 }
 
 const fileUploadStyle = {
@@ -49,8 +49,8 @@ const Register = () => {
   }
 
   return (
-    <Container h={'95vh'}>
-      <VStack h={'full'} justifyContent="center" spacing={'16'}>
+    <Container h={'95vh'} mt='5'>
+      <VStack h={'full'} justifyContent="center" spacing={'6'}>
         <Heading textTransform={"uppercase"} children={'Registration'} />
 
         <form onSubmit={submitHandler} style={{ width: '100%' }}>
