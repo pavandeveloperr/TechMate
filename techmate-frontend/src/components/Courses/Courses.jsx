@@ -12,8 +12,8 @@ import {
   Stack,
   VStack,
   Image,
-  Link,
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 const Course = ({
   views,
