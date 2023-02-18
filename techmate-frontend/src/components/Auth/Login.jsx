@@ -52,9 +52,9 @@ const Login = () => {
           </Box>
 
           <Box>
-            <Link to="/forgetpassword">
+            <Link to="/forgotpassword">
               <Button fontSize={'sm'} variant="link">
-                Forget Password?
+                Forgot Password?
               </Button>
             </Link>
           </Box>

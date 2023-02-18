@@ -6,7 +6,7 @@ import Header from './components/layout/Header/Header';
 import Home from './components/Home/Home';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
-import ForgetPassword from './components/Auth/ForgetPassword';
+import ForgotPassword from './components/Auth/ForgotPassword';
 import ResetPassword from './components/Auth/ResetPassword';
 import Contact from './components/Contact/Contact';
 import Request from './components/Request/Request';
@@ -36,7 +36,7 @@ function App() {
         <Route path='/about' element={<About />}/>
         <Route path='/login' element={<Login />}/>
         <Route path='/register' element={<Register />}/>
-        <Route path='/forgetpassword' element={<ForgetPassword />}/>
+        <Route path='/forgotpassword' element={<ForgotPassword />}/>
 
         <Route path='/resetpassword/:token' element={<ResetPassword />}/>
         <Route path='/subscribe' element={<Subscribe />}/>

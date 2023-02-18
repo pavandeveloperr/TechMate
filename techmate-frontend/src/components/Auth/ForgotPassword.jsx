@@ -1,13 +1,13 @@
 import { Button, Container, Heading, Input, VStack } from '@chakra-ui/react'
 import React, { useState } from 'react'
 
-const ForgetPassword = () => {
+const ForgotPassword = () => {
   const [email, setEmail] = useState("")
   return (
     <Container py={"16"} height={"90vh"}>
       <form>
         <Heading
-          children="Forget Password"
+          children="Forgot Password"
           my="16"
           textTransForm={"uppercase"}
           textAlign={["center", "left"]} />
@@ -32,4 +32,4 @@ const ForgetPassword = () => {
   )
 }
 
-export default ForgetPassword
+export default ForgotPassword
