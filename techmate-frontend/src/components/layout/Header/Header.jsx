@@ -41,11 +41,13 @@ const Header = () => {
     <>
       <ColorModeSwitcher />
 
+      {/* Hamburger menu  */}
       <Button
         colorScheme={'yellow'}
         onClick={onOpen}
         width="12"
         height={'12'}
+        zIndex={'overlay'}
         rounded="full"
         position={'fixed'}
         top="6"
