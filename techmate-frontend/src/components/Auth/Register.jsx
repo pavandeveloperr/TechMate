@@ -58,6 +58,7 @@ const Register = () => {
             <Avatar src={imagePrev} size={"2xl"} />
           </Box>
           <Box my={'4'}>
+            {/* Name input here */}
             <FormLabel htmlFor="Name" children="Name" />
             <Input
               required
@@ -70,6 +71,7 @@ const Register = () => {
             />
           </Box>
 
+          {/* email input here */}
           <Box my={'4'}>
             <FormLabel htmlFor="Email" children="Email Adress" />
             <Input
@@ -83,6 +85,7 @@ const Register = () => {
             />
           </Box>
 
+          {/* Password Input here */}
           <Box my={'4'}>
             <FormLabel htmlFor="password" children="Password" />
             <Input
@@ -96,6 +99,7 @@ const Register = () => {
             />
           </Box>
 
+          {/* Choose Image */}
           <Box my={'4'}>
             <FormLabel htmlFor="chooseAvatar" children="choose Avatar" />
             <Input
