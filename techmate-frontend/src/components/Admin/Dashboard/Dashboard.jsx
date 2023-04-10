@@ -65,7 +65,7 @@ const Dashboard = () => {
                     Dashboard
                 </Heading>
 
-
+                {/* Databox component */}
                 <Stack direction={['column', 'row']} minH='24' justifyContent={'space-evenly'}>
                     <Databox title="Views" qty={123} qtyPercentage={30} profit={true} />
                     <Databox title="users" qty={14} qtyPercentage={78} profit={true} />
@@ -89,9 +89,10 @@ const Dashboard = () => {
                     </Heading>
 
                     {/* Line graph here */}
-                    <LineChart />   
+                    <LineChart />
                 </Box>
 
+                {/* Progress Bar Here */}
                 <Grid templateColumns={['1fr', '2fr 1fr']}>
                     <Box p={'4'}>
                         <Heading
@@ -115,6 +116,7 @@ const Dashboard = () => {
                         <Heading textAlign={'center'} size='md' mb={'4'}>
                             Users
                         </Heading>
+
                         {/* Doughnut graph */}
                         <DoughnutChart />
                     </Box>
@@ -122,7 +124,7 @@ const Dashboard = () => {
 
             </Box>
 
-
+            {/* ADMIN SIDEBAR */}
             <Sidebar />
         </Grid>
     );

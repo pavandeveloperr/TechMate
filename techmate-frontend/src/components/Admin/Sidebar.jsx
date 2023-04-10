@@ -8,6 +8,7 @@ import {
 } from 'react-icons/ri';
 import { Link, useLocation } from 'react-router-dom';
 
+// Sidebar is rendered in dashboard component
 const Sidebar = () => {
   const location = useLocation();
   return (
@@ -45,6 +46,7 @@ const Sidebar = () => {
 
 export default Sidebar;
 
+// LinkButton Component
 function LinkButton({ url, Icon, text, active }) {
   return (
     <Link to={`/admin/${url}`}>
