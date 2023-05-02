@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-
+import CourseImage from '../../assets/CourseImages/ecomm.png'
 // ChakraUI components
 import {
   Container,
@@ -28,7 +28,7 @@ const Course = ({
 }) => {
   return (
     <VStack className="course" alignItems={['center', 'flex-start']}>
-      <Image src={ImageSrc} boxSize="60" objectFit={'contain'} marginY="7" />
+      <Image src={CourseImage} boxSize="60" objectFit={'contain'} marginY="7" />
       <Heading
         textAlign={['ceneter', 'left']}
         maxW="200px"
@@ -146,11 +146,11 @@ const Courses = () => {
           title={'Sample'}
           discription={'sample'}
           views={23}
-          imageSrc={'https://pixabay.com/images/id-1076536/'}
+          imageSrc={CourseImage}
           id={'sample'}
           creator={'sample'}
           lectureCount={4}
-          addToPlaylistHandler = {addToPlaylistHandler}
+          addToPlaylistHandler={addToPlaylistHandler}
         />
       </Stack>
     </Container>
