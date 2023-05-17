@@ -22,15 +22,14 @@ const Founder = () => (
         src="https://avatars.githubusercontent.com/u/63870995?s=400&u=a115ae29beaf6b668e44355325cd364017e5459e&v=4"
         boxSize={['40', '48']}
       />
-      <Text children="Co-Founder" opacity={0.7} />
+      <Text children="Developer" opacity={0.7} />
     </VStack>
 
     <VStack justifyContent={'center'} alignItems={['center', 'flex-start']}>
       <Heading children="Pavan Kulkarni" size={['md', 'xl']} />
       <Text
         textAlign={['center', 'left']}
-        children={`Hi, I am a full-stack developer and a tech enthusiast.
-      Our mission is to provide quality content at reasonable price.`}
+        children={`Hey there!, I am Pavan, a Full Stack Web Developer with a passion for creating beautiful, functional, and user-centered digital experiences.I am always looking for new and innovative ways to bring my clients visions to life.`}
       />
     </VStack>
   </Stack>
@@ -82,7 +81,7 @@ const About = () => {
       <Founder />
       <Stack m="8" direction={['column', 'row']} alignItems="center">
         <Text fontFamily={'cursive'} m="8" textAlign={['center', 'left']}>
-          We are a video streaming platform with some premium courses available
+          TechMate is a video streaming platform with some premium courses available
           only for premium users.
         </Text>
 
