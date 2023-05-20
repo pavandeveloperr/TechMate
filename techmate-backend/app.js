@@ -2,6 +2,7 @@ import express from "express";
 import { config } from "dotenv";
 import morgan from "morgan";
 import ErrorMiddleware from "./middlewares/Error.js";
+import cookieParser from "cookie-parser";
 
 config({
   path: "./config/config.env",
@@ -17,6 +18,7 @@ app.use(
   })
 );
 app.use(morgan("dev"));
+app.use(cookieParser());
 
 // Importing & Using routes
 import course from "./routes/courseRoutes.js";
