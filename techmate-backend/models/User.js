@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import validator from "validator";
+import JWT from "jsonwebtoken";
 
 const schema = new mongoose.Schema({
   name: {
@@ -56,5 +57,15 @@ const schema = new mongoose.Schema({
   ResetPasswordToken: String,
   ResetPasswordExpire: String,
 });
+
+// Generate a JWT token for the user
+schema.methods.getJWTToken = function () {
+  // JWT token generation using the user's _id as payload
+  // and a secret key from the environment variable JWT_SECRET
+  // Token expires in 15 days
+  return JWT.sign({ _id: this._id }, process.env.JWT_SECRET, {
+    expiresIn: "15d",
+  });
+};
 
 export const User = mongoose.model("User", schema);
