@@ -14,8 +14,8 @@ export const sendToken = (res, user, message, statusCode = 200) => {
   const options = {
     expires: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000), // Token expires in 15 days
     httpOnly: true, // Token accessible only via HTTP
-    secure: true, // Token sent only over HTTPS
-    sameSite: true, // Token sent only for same-site requests
+    // secure: true, // Token sent only over HTTPS
+    sameSite: "none", // Token sent only for same-site requests
   };
 
   // Set the token as a cookie in the response
