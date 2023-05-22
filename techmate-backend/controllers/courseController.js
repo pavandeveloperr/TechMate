@@ -2,6 +2,7 @@ import { catchAsyncError } from "../middlewares/catchAsyncError.js";
 import { Course } from "../models/Course.js";
 import ErrorHandler from "../utils/errorHandler.js";
 
+// get all courses
 export const getAllCourses = catchAsyncError(async (req, res, next) => {
   const courses = await Course.find().select("-lectures");
   res.status(200).json({
@@ -10,6 +11,7 @@ export const getAllCourses = catchAsyncError(async (req, res, next) => {
   });
 });
 
+// create course controller
 export const createCourse = catchAsyncError(async (req, res, next) => {
   const { title, description, category, createdBy } = req.body;
 
@@ -32,5 +34,20 @@ export const createCourse = catchAsyncError(async (req, res, next) => {
   res.status(201).json({
     success: true,
     message: "Course Created Successfully. You can add lectures now.",
+  });
+});
+
+export const getCourseLectures = catchAsyncError(async (req, res, next) => {
+  const course = await Course.findById(req.params.id);
+
+  if (!course) return next(new ErrorHandler("Course not found!", 404));
+
+  course.views += 1;
+
+  await course.save();
+
+  res.status(200).json({
+    success: true,
+    lectures: course.lectures,
   });
 });

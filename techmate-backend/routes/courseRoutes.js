@@ -2,6 +2,7 @@ import express from "express";
 import {
   createCourse,
   getAllCourses,
+  getCourseLectures,
 } from "../controllers/courseController.js";
 
 const router = express.Router();
@@ -13,6 +14,7 @@ router.route("/courses").get(getAllCourses);
 router.route("/createcourse").post(createCourse);
 
 // Add lecture, delete course, get course details
+router.route("/course/:id").get(getCourseLectures);
 
 // Delete Lecture
 
